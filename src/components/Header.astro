@@ -1,0 +1,221 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="display__container">
+      <div class="logo_container">
+        <img src="/pulse-logo.svg" alt="Pulse Logo" />
+      </div>
+
+      <label class="menu__toggle" for="toggle">
+        <svg viewBox="0 0 35 22" xmlns="http://www.w3.org/2000/svg"
+          ><title>Menu - Open</title><path
+            fill="currentColor"
+            d="M0 0h35v2H0zM0 10h35v2H0zM0 20h35v2H0z"></path></svg
+        >
+      </label>
+    </div>
+
+    <input type="checkbox" name="toggle" id="toggle" />
+
+    <div class="menu">
+      <ul class="menu__list">
+        <li class="menu__item"><a class="menu__link" href="/">Features</a></li>
+        <li class="menu__item">
+          <a class="menu__link" href="/">Customer Stories</a>
+        </li>
+        <li class="menu__item"><a class="menu__link" href="/">Pricing</a></li>
+        <li class="menu__item"><a class="menu__link" href="/">Blog</a></li>
+        <li class="menu__item"><a class="menu__link" href="/">Contact</a></li>
+        <li class="menu__item"><a class="menu__link" href="/">Support</a></li>
+      </ul>
+
+      <a href="/" class="menu__sign-up"
+        ><span class="sign-up__text">Sign Up</span></a
+      >
+    </div>
+  </nav>
+</header>
+
+<script>
+  const textSignUp = document.querySelector(".sign-up__text");
+
+  window.addEventListener("resize", () => {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth > 500 && windowWidth < 768) {
+      // @ts-ignore
+      textSignUp.innerText = "Sign Up for a Free 30-Day Trial";
+    } else {
+      // @ts-ignore
+      textSignUp.innerText = "Sign Up";
+    }
+  });
+</script>
+
+<style>
+  .header {
+    height: fit-content;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .display__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray);
+    padding: 1rem;
+  }
+
+  .menu__toggle {
+    cursor: pointer;
+  }
+
+  .menu__toggle svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--green);
+  }
+
+  .menu__toggle svg:hover {
+    color: var(--ligth-green);
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+    padding: 2rem 1rem;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: inline-block;
+  }
+
+  .menu__item {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--green);
+    cursor: pointer;
+  }
+
+  .menu__item:hover {
+    color: var(--black);
+  }
+
+  .menu__sign-up {
+    background: linear-gradient(to right, var(--green), var(--ligth-green));
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1.2rem 1rem;
+    display: inline-block;
+    position: relative;
+  }
+
+  .sign-up__text {
+    opacity: 0.9;
+  }
+
+  .menu__sign-up::before {
+    content: "";
+    position: absolute;
+    background-color: var(--black);
+    opacity: 0.7;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu__sign-up:hover {
+    top: -5px;
+    left: 5px;
+  }
+
+  .menu__sign-up:hover::before {
+    top: 5px;
+    left: -5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .display__container {
+      background-color: transparent;
+      border: none;
+    }
+
+    .navbar {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .menu__toggle {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      column-gap: 2.5rem;
+      align-items: center;
+      padding: 0;
+    }
+
+    .menu__list {
+      display: flex;
+      column-gap: 2.5rem;
+    }
+
+    .menu__item {
+      margin-bottom: 0;
+    }
+
+    .menu__item,
+    .menu__sign-up {
+      font-size: 1rem;
+    }
+
+    .menu__item:nth-child(5) {
+      display: none;
+    }
+
+    .menu__item:last-child {
+      display: none;
+    }
+
+    .menu__sign-up {
+      display: flex;
+      background: var(--subtle-green);
+      border: 2px solid var(--green);
+      padding: 0.4rem 1.5rem;
+    }
+
+    .menu__sign-up::before {
+      background-color: var(--green);
+      opacity: 1;
+    }
+
+    .menu__sign-up:hover {
+      top: -7px;
+      left: 7px;
+    }
+
+    .menu__sign-up:hover::before {
+      top: 7px;
+      left: -7px;
+    }
+
+    .sign-up__text {
+      opacity: 1;
+      color: var(--green);
+    }
+  }
+</style>
