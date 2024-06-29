@@ -24,6 +24,50 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+
+<script>
+  const toggle = document.querySelector("input[name=toggle]");
+  const menu = document.querySelector(".menu");
+  const main = document.querySelector("main");
+  // const footer = document.querySelector(".footer");
+
+  const handleMenu = () => {
+    // @ts-ignore
+    if (toggle.checked) {
+      // @ts-ignore
+      main.style.animation = "dissappear 0.3s ease-in-out both";
+      // // @ts-ignore
+      // footer.style.animation = "dissappear 0.3s ease-in-out both";
+
+      // @ts-ignore
+      menu.style.animation = "none";
+
+      setTimeout(() => {
+        // @ts-ignore
+        main.style.display = "none";
+        // @ts-ignore
+        menu.style.display = "block";
+      }, 300);
+    } else {
+      // @ts-ignore
+      menu.style.animation = "menu-dissappear 0.3s ease-in-out both";
+
+      // @ts-ignore
+      main.style.animation = "appear 0.3s ease-in-out both";
+
+      setTimeout(() => {
+        // @ts-ignore
+        main.style.display = "block";
+
+        // @ts-ignore
+        menu.style.display = "none";
+      }, 300);
+    }
+  };
+
+  toggle.addEventListener("change", handleMenu);
+</script>
+
 <style is:global>
   * {
     box-sizing: border-box;
@@ -37,6 +81,7 @@ const { title } = Astro.props;
     --subtle-green: #eafaf1;
     --gray: #d6dae5;
     --black: #080c16;
+    --black-shadow: #080c16ab;
     --white: #fcfcfc;
     --max-width: 1200px;
   }
@@ -81,13 +126,25 @@ const { title } = Astro.props;
     font-size: inherit;
   }
 
-  .header:has(input[type="checkbox"]:checked) ~ :is(main, footer) {
-    display: none;
+  @keyframes item-appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  @media screen and (min-width: 768px) {
-    .header:has(input[type="checkbox"]:checked) ~ main {
-      display: block;
+  @keyframes menu-dissappear {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
     }
   }
 
@@ -106,7 +163,6 @@ const { title } = Astro.props;
     }
     to {
       opacity: 0;
-      display: none;
     }
   }
 </style>
