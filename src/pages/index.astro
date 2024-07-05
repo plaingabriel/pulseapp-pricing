@@ -4,16 +4,57 @@ import Layout from "@layouts/Layout.astro";
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Try Pulse free for 30 days.</h1>
-    <p>
-      See why Pulse is the best way to monitor your cash flow. Sign up for any
-      plan and try Pulse absolutely free for 30 days.
-    </p>
+    <header class="header">
+      <h1>Try Pulse free for 30 days.</h1>
+      <p class="subtitle">
+        See why Pulse is the best way to monitor your cash flow. Sign up for any
+        plan and try Pulse absolutely free for 30 days.
+      </p>
+    </header>
   </main>
 </Layout>
 
 <style>
   main {
-    padding: 0 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1,
+  .subtitle {
+    color: var(--black);
+  }
+
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    max-width: 600px;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    max-width: 620px;
+  }
+
+  @media screen and (min-width: 768px) {
+    main {
+      padding: 0 1rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .header {
+      align-items: center;
+    }
+
+    h1,
+    .subtitle {
+      text-align: center;
+    }
   }
 </style>

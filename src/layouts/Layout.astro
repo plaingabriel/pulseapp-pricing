@@ -110,6 +110,19 @@ const { title } = Astro.props;
     --black-shadow: #080c16ab;
     --white: #fcfcfc;
     --max-width: 1200px;
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    :root {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    :root {
+      font-size: 16px;
+    }
   }
 
   body {
@@ -150,6 +163,10 @@ const { title } = Astro.props;
     cursor: pointer;
     background: transparent;
     font-size: inherit;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   @keyframes item-appear {
