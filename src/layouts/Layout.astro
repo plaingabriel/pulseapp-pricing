@@ -110,6 +110,7 @@ const { title } = Astro.props;
     --black-shadow: #080c16ab;
     --white: #fcfcfc;
     --max-width: 1200px;
+    --slate-gray: #4d4e52;
     font-size: 12px;
   }
 
@@ -167,6 +168,12 @@ const { title } = Astro.props;
 
   p {
     text-wrap: pretty;
+  }
+
+  p,
+  a,
+  li {
+    line-height: 1.5;
   }
 
   @keyframes item-appear {

@@ -1,0 +1,48 @@
+---
+import CtaBtn from "@components/CtaBtn.astro";
+const { title, subtitle, list, recomended = true } = Astro.props;
+---
+
+<a href="/" class="card">
+  <div class=`heading ${recomended ? "recomended" : ""}`>
+    {
+      recomended
+        ? "Recommended"
+        : "Complex business with multiple financial accounts, currencies, or auditing needs?"
+    }
+  </div>
+
+  <header>
+    <h3 class="title">{title}</h3>
+    <p class="subtitle">{subtitle}</p>
+  </header>
+
+  <div class="list-title">{list.title}</div>
+
+  <ul class="list">
+    {list.content.map((item: string) => <li>{item}</li>)}
+  </ul>
+
+  <CtaBtn text={recomended ? "Sign Up Now" : "Try Premium"} />
+</a>
+
+<style>
+  li::before {
+    content: "✓";
+    margin-right: 0.5rem;
+  }
+
+  .heading {
+    background-color: var(--gray);
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .recomended {
+    background-color: var(--green);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+</style>

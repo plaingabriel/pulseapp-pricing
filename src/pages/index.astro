@@ -1,5 +1,10 @@
 ---
+import { pricingCards } from "@const";
 import Layout from "@layouts/Layout.astro";
+import Pricing from "@components/Pricing.astro";
+import Card from "@components/Card.astro";
+
+const [recomended, premium] = pricingCards;
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,12 +16,26 @@ import Layout from "@layouts/Layout.astro";
         plan and try Pulse absolutely free for 30 days.
       </p>
     </header>
+    <section class="pricing">
+      <Pricing />
+      <Card
+        title="Small Business Plan"
+        subtitle="$59 per month"
+        list={recomended}
+      />
+      <Card
+        title="Unlock Extra Features"
+        subtitle="$89 per month"
+        list={premium}
+        recomended={false}
+      />
+    </section>
   </main>
 </Layout>
 
 <style>
   main {
-    padding: 2rem 1rem;
+    padding: 2rem;
   }
 
   .header {
@@ -37,8 +56,15 @@ import Layout from "@layouts/Layout.astro";
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     max-width: 620px;
+  }
+
+  .pricing {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 0;
+    row-gap: 1.6rem;
   }
 
   @media screen and (min-width: 768px) {
