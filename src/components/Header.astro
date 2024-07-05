@@ -2,7 +2,9 @@
   <nav class="navbar">
     <div class="display__container">
       <div class="logo_container">
-        <img src="/pulse-logo.svg" alt="Pulse Logo" />
+        <a href="/">
+          <img src="/pulse-logo.svg" alt="Pulse Logo" />
+        </a>
       </div>
 
       <label class="menu__toggle" for="toggle">
@@ -196,6 +198,12 @@
     .menu__item,
     .menu__sign-up {
       font-size: 1rem;
+    }
+
+    .menu__item,
+    .menu__sign-up {
+      animation: none;
+      opacity: 1;
     }
 
     .menu__item:nth-child(5) {

@@ -63,6 +63,32 @@ const { title } = Astro.props;
         menu.style.display = "none";
       }, 300);
     }
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        // @ts-ignore
+        menu.style.display = "flex";
+        // @ts-ignore
+        menu.style.animation = "none";
+        // @ts-ignore
+        main.style.display = "block";
+        // @ts-ignore
+        main.style.animation = "none";
+      } else {
+        // @ts-ignore
+        if (toggle.checked) {
+          // @ts-ignore
+          menu.style.display = "block";
+          // @ts-ignore
+          main.style.display = "none";
+        } else {
+          // @ts-ignore
+          menu.style.display = "none";
+          // @ts-ignore
+          main.style.display = "block";
+        }
+      }
+    });
   };
 
   toggle.addEventListener("change", handleMenu);
