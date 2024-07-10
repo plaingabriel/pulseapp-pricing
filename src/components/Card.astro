@@ -1,10 +1,9 @@
 ---
-import CtaBtn from "@components/CtaBtn.astro";
 const { title, subtitle, list, recomended = true } = Astro.props;
 ---
 
-<a href="/" class="card">
-  <div class=`heading ${recomended ? "recomended" : ""}`>
+<a href="/" class=`${recomended ? "card-recommended" : "card"}`>
+  <div class=`heading ${recomended ? "recomended" : "normal"}`>
     {
       recomended
         ? "Recommended"
@@ -12,37 +11,140 @@ const { title, subtitle, list, recomended = true } = Astro.props;
     }
   </div>
 
-  <header>
-    <h3 class="title">{title}</h3>
-    <p class="subtitle">{subtitle}</p>
-  </header>
+  <div class="body">
+    <header>
+      <div class=`${recomended ? "title-recomended" : "title"}`>{title}</div>
+      <div class="subtitle">{subtitle}</div>
+    </header>
 
-  <div class="list-title">{list.title}</div>
+    <div class="main">
+      <div class="list-title">{list.title}</div>
 
-  <ul class="list">
-    {list.content.map((item: string) => <li>{item}</li>)}
-  </ul>
+      <ul class="list">
+        {list.content.map((item: string) => <li>{item}</li>)}
+      </ul>
+    </div>
 
-  <CtaBtn text={recomended ? "Sign Up Now" : "Try Premium"} />
+    <footer>
+      <div class="cta-btn">
+        <span class="cta-btn__text"
+          >{recomended ? "Sign Up Now" : "Try Premium"}</span
+        >
+      </div>
+    </footer>
+  </div>
 </a>
 
 <style>
+  .card {
+    border: 1px solid var(--gray);
+  }
+
+  .card-recommended {
+    border: 1px solid var(--green);
+    border-radius: 10px 10px 0 0;
+  }
+
   li::before {
     content: "✓";
     margin-right: 0.5rem;
+    font-weight: bold;
+    color: var(--green);
   }
 
   .heading {
-    background-color: var(--gray);
+    background-color: var(--subtle-gray);
+    color: var(--slate-gray);
     text-align: center;
     padding: 1rem;
+    border-bottom: 1px solid var(--gray);
+    font-size: 1.2rem;
   }
 
   .recomended {
     background-color: var(--green);
     color: var(--white);
     font-weight: bold;
-    font-size: 1.2rem;
     text-transform: uppercase;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .body {
+    background-color: var(--white);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 610px) {
+    header {
+      flex-direction: row;
+      justify-content: start;
+      align-items: end;
+    }
+  }
+
+  .title,
+  .title-recomended {
+    color: var(--green);
+    line-height: 0.7;
+    font-size: 2.8rem;
+  }
+
+  .title-recomended {
+    font-weight: bold;
+  }
+
+  .subtitle {
+    color: var(--slate-gray);
+    font-size: 2rem;
+    opacity: 0.8;
+    line-height: 0.7;
+  }
+
+  .main {
+    color: var(--slate-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .list-title {
+    font-weight: bold;
+    opacity: 0.9;
+    text-transform: uppercase;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  :is(.card, .card-recommended):hover :is(.cta-btn__text, .main, .normal) {
+    color: var(--black);
+  }
+
+  .cta-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: var(--ligth-green);
+    color: var(--black);
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .cta-btn__text {
+    color: var(--slate-gray);
+    transition: color 0.1s ease-in-out;
   }
 </style>
