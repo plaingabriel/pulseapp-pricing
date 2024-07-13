@@ -1,0 +1,128 @@
+<div class="prefooter">
+  <div class="prefooter__wrapper">
+    <h2 class="prefooter__title">FAQ</h2>
+    <ul class="prefooter__list">
+      <li class="prefooter__item">
+        <h4 class="item__title">How does the 30-day free trial work?</h4>
+        <p class="item__text">
+          You can use Pulse absolutely free for 30 days. After 30 days, we will
+          charge the credit card you used when you sign up. If you choose to
+          cancel your account before your trial ends, your card will not be
+          charged.
+        </p>
+      </li>
+
+      <li class="prefooter__item">
+        <h4 class="item__title">
+          If I upgrade an existing account, do I get another free trial?
+        </h4>
+        <p class="item__text">
+          Brand new accounts are the only ones eligible for a 30-day free trial.
+          If you upgrade an existing account, your credit card will be billed
+          the new amount on the date of your next billing cycle.
+        </p>
+      </li>
+
+      <li class="prefooter__item">
+        <h4 class="item__title">What is a “Financial Account”?</h4>
+        <p class="item__text item__text--break">
+          Financial Accounts are a grouping of income and expense items that can
+          be used for tracking or reporting purposes.
+        </p>
+
+        <p class="item__text">
+          They’re designed to be flexible and can be used to differentiate
+          between bank accounts, companies, individuals or between personal and
+          business entries.
+        </p>
+      </li>
+
+      <li class="prefooter__item">
+        <h4 class="item__title">
+          Do I have to commit to a long-term contract?
+        </h4>
+        <p class="item__text">
+          No. There is no contract when you use Pulse, other than agreeing to
+          our Terms of Service.
+        </p>
+      </li>
+
+      <li class="prefooter__item">
+        <h4 class="item__title">
+          Will I be able to cancel my account if I don’t use Pulse?
+        </h4>
+        <p class="item__text">
+          Yes – you can cancel your account at any time. To cancel your account,
+          go to your billing page and click on “Please cancel my account” at the
+          bottom of the page. The account owner is the only one who can cancel
+          an account. An email request to delete an account is not considered
+          cancellation.
+        </p>
+      </li>
+
+      <li class="prefooter__item">
+        <h4 class="item__title">What types of payments do you accept?</h4>
+        <p class="item__text">
+          We accept payments made online using Visa, Mastercard, Discover, and
+          American Express.
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .prefooter {
+    background-color: var(--white);
+    padding: 8rem 9rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--gray);
+  }
+
+  .prefooter__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    max-width: var(--max-width);
+  }
+
+  .prefooter__title {
+    color: var(--black);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .prefooter__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .prefooter__item {
+    max-width: 550px;
+  }
+
+  .item__title {
+    font-weight: 700;
+  }
+
+  .item__text {
+    color: var(--slate-gray);
+  }
+
+  .item__text--break {
+    margin-bottom: 2.6rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    .prefooter__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      row-gap: 2rem;
+      justify-content: space-between;
+    }
+  }
+</style>

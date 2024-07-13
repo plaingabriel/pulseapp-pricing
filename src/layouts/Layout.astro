@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/work-sans/wght.css";
 import Header from "@components/Header.astro";
+import Prefooter from "@components/Prefooter.astro";
 
 interface Props {
   title: string;
@@ -22,6 +23,7 @@ const { title } = Astro.props;
   <body>
     <Header />
     <slot />
+    <Prefooter />
   </body>
 </html>
 
@@ -133,7 +135,7 @@ const { title } = Astro.props;
     align-items: center;
   }
 
-  body > * {
+  body > :is(header, main) {
     width: 100%;
     max-width: var(--max-width);
   }
