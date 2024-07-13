@@ -17,25 +17,32 @@ const { title, subtitle, list, recomended = true } = Astro.props;
       <div class="subtitle">{subtitle}</div>
     </header>
 
-    <div class="main">
-      <div class="list-title">{list.title}</div>
+    <div class="reverse-wrapper">
+      <div class="main">
+        <div class="list-title">{list.title}</div>
 
-      <ul class="list">
-        {list.content.map((item: string) => <li>{item}</li>)}
-      </ul>
-    </div>
-
-    <footer>
-      <div class="cta-btn">
-        <span class="cta-btn__text"
-          >{recomended ? "Sign Up Now" : "Try Premium"}</span
-        >
+        <ul class="list">
+          {list.content.map((item: string) => <li>{item}</li>)}
+        </ul>
       </div>
-    </footer>
+
+      <footer>
+        <div class="cta-btn">
+          <span class="cta-btn__text"
+            >{recomended ? "Sign Up Now" : "Try Premium"}</span
+          >
+        </div>
+      </footer>
+    </div>
   </div>
 </a>
 
 <style>
+  .card,
+  .card-recommended {
+    width: 100%;
+  }
+
   .card {
     border: 1px solid var(--gray);
   }
@@ -67,6 +74,12 @@ const { title, subtitle, list, recomended = true } = Astro.props;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 10px 10px 0 0;
+  }
+
+  .reverse-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .body {
@@ -146,5 +159,64 @@ const { title, subtitle, list, recomended = true } = Astro.props;
   .cta-btn__text {
     color: var(--slate-gray);
     transition: color 0.1s ease-in-out;
+  }
+
+  @media screen and (min-width: 992px) {
+    .body {
+      padding: 4rem 2rem;
+    }
+
+    .reverse-wrapper {
+      flex-direction: column-reverse;
+      row-gap: 2rem;
+    }
+
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header > *:first-child {
+      text-align: center;
+      max-width: 300px;
+      line-height: 1;
+    }
+
+    .title-recomended {
+      font-size: 3.6rem;
+    }
+
+    .heading {
+      font-size: 1rem;
+    }
+
+    .recomended {
+      padding: 0.5rem 0;
+    }
+
+    .cta-btn {
+      width: fit-content;
+      padding: 1rem 2.8rem;
+      transition: all 0.1s ease;
+    }
+
+    :is(.card, .card-recommended):hover .cta-btn {
+      transform: scale(1.15);
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+    }
+
+    .list-title {
+      text-align: center;
+      opacity: 1;
+      font-size: 0.9rem;
+    }
+
+    .main {
+      font-size: 1.1rem;
+    }
   }
 </style>

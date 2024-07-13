@@ -36,6 +36,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 14px;
+    width: 100%;
   }
 
   .pricing__title {
@@ -61,5 +62,25 @@
   .pricing__sign-up {
     text-decoration: underline;
     color: var(--black);
+  }
+
+  @media screen and (min-width: 992px) {
+    .pricing {
+      margin-right: 3rem;
+      width: 875px;
+    }
+
+    .pricing__list {
+      margin-left: 14px;
+    }
+
+    .pricing__title {
+      font-size: 1.4rem;
+    }
+
+    .pricing__list,
+    .pricing__footer {
+      font-size: 1.1rem;
+    }
   }
 </style>
