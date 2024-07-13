@@ -3,6 +3,7 @@ import { pricingCards } from "@const";
 import Layout from "@layouts/Layout.astro";
 import Pricing from "@components/Pricing.astro";
 import Card from "@components/Card.astro";
+import Quote from "@components/Quote.astro";
 
 const [recomended, premium] = pricingCards;
 ---
@@ -30,12 +31,18 @@ const [recomended, premium] = pricingCards;
         recomended={false}
       />
     </section>
+
+    <Quote />
   </main>
 </Layout>
 
 <style>
   main {
     padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    margin-bottom: 4rem;
   }
 
   .header {
@@ -49,9 +56,9 @@ const [recomended, premium] = pricingCards;
   }
 
   h1 {
-    font-size: 3.8rem;
+    font-size: 4rem;
     font-weight: 700;
-    max-width: 600px;
+    max-width: 550px;
     margin-bottom: 1rem;
   }
 

@@ -1,0 +1,46 @@
+<div class="quote">
+  <header class="quote__header">
+    <img src="/subvert-avatar.png" alt="Subvert Logo" class="quote__logo" />
+  </header>
+
+  <p class="quote__text">
+    “Pulse is worth every penny because it empowers business owners with
+    critical financial insight and knowledge.”
+  </p>
+
+  <footer class="quote__footer">
+    <p class="quote__inc">SUBVERT MARKETING, INC</p>
+  </footer>
+</div>
+
+<style>
+  .quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .quote__text {
+    font-size: 2rem;
+    color: var(--black);
+    max-width: 850px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .quote__text {
+      font-size: 1.8rem;
+    }
+  }
+
+  .quote__inc {
+    font-size: 1.1rem;
+    color: var(--green);
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+</style>
