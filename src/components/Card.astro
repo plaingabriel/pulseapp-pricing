@@ -103,12 +103,17 @@ const { title, subtitle, list, recomended = true } = Astro.props;
       justify-content: start;
       align-items: end;
     }
+
+    .title,
+    .title-recomended {
+      line-height: 0.7;
+    }
   }
 
   .title,
   .title-recomended {
     color: var(--green);
-    line-height: 0.7;
+    line-height: 1;
     font-size: 2.8rem;
   }
 
@@ -120,7 +125,7 @@ const { title, subtitle, list, recomended = true } = Astro.props;
     color: var(--slate-gray);
     font-size: 2rem;
     opacity: 0.8;
-    line-height: 0.7;
+    line-height: 1;
   }
 
   .main {
