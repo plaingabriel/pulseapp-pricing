@@ -33,15 +33,18 @@ const { title } = Astro.props;
   const toggle = document.querySelector("input[name=toggle]");
   const menu = document.querySelector(".menu");
   const main = document.querySelector("main");
-  // const footer = document.querySelector(".footer");
+  const prefooter = document.querySelector(".prefooter");
+  const footer = document.querySelector(".footer");
 
   const handleMenu = () => {
     // @ts-ignore
     if (toggle.checked) {
       // @ts-ignore
       main.style.animation = "dissappear 0.3s ease-in-out both";
-      // // @ts-ignore
-      // footer.style.animation = "dissappear 0.3s ease-in-out both";
+      // @ts-ignore
+      prefooter.style.animation = "dissappear 0.3s ease-in-out both";
+      // @ts-ignore
+      footer.style.animation = "dissappear 0.3s ease-in-out both";
 
       // @ts-ignore
       menu.style.animation = "none";
@@ -49,6 +52,10 @@ const { title } = Astro.props;
       setTimeout(() => {
         // @ts-ignore
         main.style.display = "none";
+        // @ts-ignore
+        prefooter.style.display = "none";
+        // @ts-ignore
+        footer.style.display = "none";
         // @ts-ignore
         menu.style.display = "block";
       }, 300);
@@ -59,9 +66,19 @@ const { title } = Astro.props;
       // @ts-ignore
       main.style.animation = "appear 0.3s ease-in-out both";
 
+      // @ts-ignore
+      prefooter.style.animation = "appear 0.3s ease-in-out both";
+
+      // @ts-ignore
+      footer.style.animation = "appear 0.3s ease-in-out both";
+
       setTimeout(() => {
         // @ts-ignore
         main.style.display = "block";
+        // @ts-ignore
+        prefooter.style.display = "block";
+        // @ts-ignore
+        footer.style.display = "block";
 
         // @ts-ignore
         menu.style.display = "none";
@@ -74,8 +91,18 @@ const { title } = Astro.props;
         menu.style.display = "flex";
         // @ts-ignore
         menu.style.animation = "none";
+
         // @ts-ignore
         main.style.display = "block";
+        // @ts-ignore
+        prefooter.style.display = "block";
+        // @ts-ignore
+        footer.style.display = "block";
+
+        // @ts-ignore
+        prefooter.style.animation = "none";
+        // @ts-ignore
+        footer.style.animation = "none";
         // @ts-ignore
         main.style.animation = "none";
       } else {
@@ -83,13 +110,23 @@ const { title } = Astro.props;
         if (toggle.checked) {
           // @ts-ignore
           menu.style.display = "block";
+
           // @ts-ignore
           main.style.display = "none";
+          // @ts-ignore
+          prefooter.style.display = "none";
+          // @ts-ignore
+          footer.style.display = "none";
         } else {
           // @ts-ignore
           menu.style.display = "none";
+
           // @ts-ignore
           main.style.display = "block";
+          // @ts-ignore
+          prefooter.style.display = "block";
+          // @ts-ignore
+          footer.style.display = "block";
         }
       }
     });
