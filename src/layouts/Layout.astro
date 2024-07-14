@@ -2,6 +2,7 @@
 import "@fontsource-variable/work-sans/wght.css";
 import Header from "@components/Header.astro";
 import Prefooter from "@components/Prefooter.astro";
+import Footer from "@components/Footer.astro";
 
 interface Props {
   title: string;
@@ -24,6 +25,7 @@ const { title } = Astro.props;
     <Header />
     <slot />
     <Prefooter />
+    <Footer />
   </body>
 </html>
 

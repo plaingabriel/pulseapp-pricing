@@ -1,0 +1,215 @@
+<footer class="footer">
+  <div class="footer__wrapper">
+    <header class="footer__header">
+      <div class="footer__img-wrapper">
+        <img src="/pulse-logo.svg" alt="Pulse Logo" class="footer__img" />
+      </div>
+
+      <a href="/" class="footer__button">Sign Up for a Free 30-Diay Trial</a>
+    </header>
+
+    <section class="footer__lists">
+      <div class="footer__list-wrapper">
+        <h5 class="footer__list-title">Product</h5>
+
+        <ul class="footer__list">
+          <li class="footer__item"><a href="/">Features</a></li>
+          <li class="footer__item"><a href="/">Pricing</a></li>
+          <li class="footer__item"><a href="/">Sign Up</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__list-wrapper">
+        <h5 class="footer__list-title">Company</h5>
+
+        <ul class="footer__list">
+          <li class="footer__item"><a href="/">Customer Stories</a></li>
+          <li class="footer__item"><a href="/">About</a></li>
+          <li class="footer__item"><a href="/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__list-wrapper">
+        <h5 class="footer__list-title">Resources</h5>
+
+        <ul class="footer__list">
+          <li class="footer__item"><a href="/">Support</a></li>
+          <li class="footer__item"><a href="/">blog</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer__footer">
+      <p class="footer__text">
+        ©2019 Pulseapp.com, Inc. All rights reserved | <a href="/"
+          >Terms of Use</a
+        > | <a href="/">Privacy Policy</a> | <a href="/">EU Privacy</a> |
+      </p>
+
+      <p class="footer__text">
+        Pulse is made by <a href="/">Simple Focus</a>. We also make <a href="/"
+          >Ballpark</a
+        >,
+        <a href="/">Sifter</a>
+        <a href="/">Curated</a>.
+      </p>
+    </footer>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #080c16;
+    width: 100%;
+    display: flex;
+    padding: 3rem 2rem 8rem 2rem;
+  }
+
+  .footer__wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "lists lists"
+      "footer footer";
+    row-gap: 4rem;
+    max-width: 1200px;
+  }
+
+  .footer__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+    grid-area: header;
+  }
+
+  .footer__img-wrapper {
+    align-self: center;
+    width: 10rem;
+    height: auto;
+  }
+
+  .footer__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer__button {
+    background: linear-gradient(to right, var(--green), var(--ligth-green));
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: 1.2rem 2.4rem;
+    display: block;
+    position: relative;
+    box-shadow: 0px 0px 0px var(--slate-gray);
+    text-align: center;
+  }
+
+  .footer__button:hover {
+    top: -4px;
+    left: 4px;
+    box-shadow: -4px 4px 0px var(--slate-gray);
+  }
+
+  .footer__lists {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 5rem;
+    grid-area: lists;
+  }
+
+  .footer__list-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+
+  .footer__list-title {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .footer__item {
+    color: var(--green);
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+
+  .footer__item:hover {
+    color: var(--white);
+  }
+
+  .footer__footer {
+    grid-area: footer;
+  }
+
+  .footer__text {
+    color: var(--subtle-gray);
+    opacity: 0.6;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .footer__text > a {
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: 768px) {
+    .footer {
+      padding: 8rem 2rem 2rem 2rem;
+    }
+
+    .footer__button {
+      width: fit-content;
+      align-self: center;
+    }
+
+    .footer__lists {
+      margin-bottom: 4rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .footer {
+      justify-content: center;
+    }
+
+    .footer__wrapper {
+      grid-template-areas:
+        "header lists"
+        "footer footer";
+      column-gap: 6rem;
+      align-items: start;
+      justify-items: start;
+    }
+
+    .footer__img-wrapper {
+      align-self: start;
+    }
+
+    .footer__button {
+      font-size: 1.2rem;
+    }
+
+    .footer__list-title {
+      font-size: 1.4rem;
+    }
+
+    .footer__item {
+      font-size: 1.2rem;
+    }
+
+    .footer__text {
+      font-size: 0.8rem;
+    }
+  }
+</style>
